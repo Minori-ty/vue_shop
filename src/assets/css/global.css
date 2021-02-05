@@ -22,3 +22,7 @@ html, body, #app {
 .el-pagination {
     margin-top: 15px;
 }
+
+.el-cascader-panel {
+    height: 250px;
+}
