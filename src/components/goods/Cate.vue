@@ -157,13 +157,14 @@ export default {
       //   控制添加分类对话框的显示与隐藏
       addCateDialogVisible: false,
       //   添加分类的表单数据对象
-      addCateForm: {},
-      //   将要添加的分类的名称
-      cat_name: '',
-      //   父级分类的ID
-      cat_pid: 0,
-      //   分类的等级，默认要添加的是1级分类
-      cat_level: 0,
+      addCateForm: {
+        //   将要添加的分类的名称
+        cat_name: '',
+        //   父级分类的ID
+        cat_pid: 0,
+        //   分类的等级，默认要添加的是1级分类
+        cat_level: 0,
+      },
       //   添加分类表单验证规则对象
       addCateFormRules: {
         cat_name: [
@@ -247,6 +248,7 @@ export default {
     },
     // 点击按钮，添加新的分类
     addCate() {
+      console.log(this.addCateForm)
       this.$refs.addCateFormRef.validate(async (valid) => {
         if (!valid) return
         const { data: res } = await this.$http.post(
