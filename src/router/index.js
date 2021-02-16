@@ -8,9 +8,19 @@ import Rights from '../components/power/Rights.vue'
 import Roles from '../components/power/Roles.vue'
 import Cate from '../components/goods/Cate.vue'
 import Params from '../components/goods/Params.vue'
+import GoodsList from '../components/goods/List.vue'
 import TreeTable from 'vue-table-with-tree-grid'
+import Add from '../components/goods/Add.vue'
+
 Vue.use(VueRouter)
-Vue.component('tree-table', TreeTable)
+
+// 导入富文本编辑器
+import VueQuillEditor from 'vue-quill-editor'
+// 导入富文本编辑器的样式
+import 'quill/dist/quill.core.css' // import styles
+import 'quill/dist/quill.snow.css' // for snow theme
+import 'quill/dist/quill.bubble.css' // for bubble theme
+
 
 const routes = [
   { path: '/', redirect: '/login' },
@@ -24,9 +34,28 @@ const routes = [
       { path: '/roles', component: Roles },
       { path: '/categories', component: Cate },
       { path: '/params', component: Params },
+      { path: '/goods', component: GoodsList },
+      { path: '/goods/add', component: Add },
     ]
   },
 ]
+
+Vue.component('tree-table', TreeTable)
+// 将富文本编辑器注册为全局可用的组件
+Vue.use(VueQuillEditor)
+
+Vue.filter('dateFormat', function (originVal) {
+  const dt = new Date(originVal)
+
+  const y = dt.getFullYear()
+  const m = (dt.getMonth() + 1 + '').padStart(2, '0')
+  const d = (dt.getDate() + '').padStart(2, '0')
+  const hh = (dt.getHours() + '').padStart(2, '0')
+  const mm = (dt.getMinutes() + '').padStart(2, '0')
+  const ss = (dt.getSeconds() + '').padStart(2, '0')
+
+  return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
+})
 
 const router = new VueRouter({
   routes
