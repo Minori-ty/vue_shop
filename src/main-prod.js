@@ -8,7 +8,11 @@ import './assets/fonts/iconfont.css'
 import './assets/css/global.css'
 
 import NProgress from 'nprogress'
-import 'nprogress/nprogress.css'
+// import 'nprogress/nprogress.css'
+
+// import 'quill/dist/quill.core.css' // import styles
+// import 'quill/dist/quill.snow.css' // for snow theme
+// import 'quill/dist/quill.bubble.css' // for bubble theme
 
 // 配置axios
 import axios from 'axios'
