@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <title><%= htmlWebpackPlugin.options.isProd?'':'dev - ' %>电商后台管理系统</title>
+
+    <% if(htmlWebpackPlugin.options.isProd){ %>
     <!-- progress的样式表文件 -->
     <link rel="stylesheet" href="https://cdn.staticfile.org/nprogress/0.2.0/nprogress.min.css"/>
     <!--富文本编辑器的样式表文件-->
@@ -17,6 +19,8 @@
     <link rel="stylesheet" href="https://cdn.staticfile.org/element-ui/2.8.2/theme-chalk/index.css">
     <!-- element-ui的js文件 -->
     <script src="https://cdn.staticfile.org/element-ui/2.8.2/index.js"></script>
+
+    <% } %>
   </head>
   <body>
     <noscript>
