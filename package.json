@@ -11,7 +11,7 @@
     "axios": "^0.21.0",
     "core-js": "^3.6.5",
     "echarts": "^5.0.2",
-    "element-ui": "^2.4.5",
+    "element-ui": "^2.15.1",
     "lodash": "^4.17.20",
     "nprogress": "^0.2.0",
     "vue": "^2.6.11",
